@@ -9,5 +9,5 @@ export {
     Portfolio,
     Market,
     Profile,
-    MainLayout
+    MainLayout,
 }
