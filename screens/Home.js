@@ -7,6 +7,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { SIZES, COLORS, FONTS, dummyData, icons } from "../constants";
 import { BalanceInfo } from "../components";
 import { IconTextButton, Chart } from "../components";
+import { FlatList } from "react-native-gesture-handler";
 
 const Home = ({ getHoldings, getCoinMarket, myHoldings, coins }) => {
   useFocusEffect(
@@ -93,6 +94,27 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins }) => {
         />
 
         {/* Top cryptocurrency  */}
+        <FlatList
+          data={coins}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={{
+            marginTop: 30,
+            paddingHorizontal: SIZES.padding,
+          }}
+          ListHeaderComponent={
+            <View
+              style={{
+                marginBottom: SIZES.radius,
+              }}
+            >
+              <Text style={{ color: COLORS.white, ...FONTS.h3, fontSize: 18 }}>
+               
+                Top cryptocurrency
+              </Text>
+            </View>
+          }
+          renderItem={({item})=> }
+        />
       </View>
     </MainLayout>
   );
