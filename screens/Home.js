@@ -85,7 +85,7 @@ const Home = ({ getHoldings, getCoinMarket, myHoldings, coins }) => {
         }}
       >
         {/* Header - Wallet Info  */}
-        {renderWalletInfo()}
+        {renderWalletInfo()}  
 
         {/* Chart  */}
         <Chart
