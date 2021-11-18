@@ -67,7 +67,7 @@ export function getHoldings(
 
             return {
               id: item.id,
-              Symbol: item.symbol,
+              symbol: item.symbol,
               name: item.name,
               image: item.image,
               current_price: item.current_price,
@@ -77,13 +77,14 @@ export function getHoldings(
                 item.price_change_percentage_7d_in_currency,
               holding_value_change_7d:
                 (item.current_price - price7d) * coin.qty,
-              sparkline_7d: {
+              sparkline_in_7d: {
                 value: item.sparkline_in_7d.price.map((price) => {
                   return price * coin.qty;
                 }),
               },
             };
           });
+
 
           dispatch(getHoldingsSuccess(myHoldings));
         } else {
